@@ -1,0 +1,47 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: maliha-frontend
+    restart: unless-stopped
+    networks:
+      - maliha-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: maliha-backend
+    restart: unless-stopped
+    volumes:
+      - ./backend:/var/www/html
+      - backend_vendor:/var/www/html/vendor
+    environment:
+      - APP_ENV=production
+      - APP_DEBUG=false
+    networks:
+      - maliha-network
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: maliha-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./backend/public:/var/www/html/public:ro
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - maliha-network
+
+networks:
+  maliha-network:
+    driver: bridge
+
+volumes:
+  backend_vendor:

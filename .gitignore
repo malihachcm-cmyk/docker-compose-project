@@ -1,0 +1,75 @@
+# ===========================================
+# Git Ignore for Maliha's Docker Compose Project
+# ===========================================
+
+# ----- Guide/Learning Files -----
+guide/
+SONARQUBE_SETTINGS_GUIDE.md
+SONARQUBE_EXPLANATION.md
+MY_PROJECT_EXPLANATION.md
+INTERVIEW_QUESTIONS.md
+
+# ----- Claude/AI Related -----
+.claude/
+
+# ----- Node.js -----
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ----- PHP/Laravel -----
+vendor/
+.env
+.env.backup
+storage/*.key
+Homestead.yaml
+Homestead.json
+*.log
+
+# ----- Laravel Specific -----
+backend/storage/logs/*
+backend/storage/framework/cache/*
+backend/storage/framework/sessions/*
+backend/storage/framework/views/*
+backend/bootstrap/cache/*
+!backend/storage/logs/.gitkeep
+!backend/storage/framework/cache/.gitkeep
+!backend/storage/framework/sessions/.gitkeep
+!backend/storage/framework/views/.gitkeep
+!backend/bootstrap/cache/.gitkeep
+
+# ----- React Build -----
+frontend/build/
+frontend/coverage/
+
+# ----- IDE/Editor -----
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ----- Docker -----
+# Keep docker-compose.yml but ignore local overrides
+docker-compose.override.yml
+
+# ----- SonarQube -----
+.scannerwork/
+coverage/
+
+# ----- OS Files -----
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ----- Temporary Files -----
+*.tmp
+*.temp
+*.bak

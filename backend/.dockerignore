@@ -1,0 +1,29 @@
+# ============================================================
+# .dockerignore for Laravel Backend
+# ============================================================
+
+# Dependencies (installed fresh in container)
+/vendor
+
+# Environment files (will be set via docker-compose)
+.env
+.env.backup
+
+# Storage (generated at runtime)
+/storage/logs/*
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+
+# Development files
+.git
+.gitignore
+*.md
+
+# IDE
+.idea
+.vscode
+
+# OS
+.DS_Store
+Thumbs.db

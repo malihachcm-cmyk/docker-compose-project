@@ -1,0 +1,42 @@
+# ============================================================
+# LESSON: .gitignore - Files NOT to commit to Git
+# ============================================================
+#
+# Git tracks all files by default. This file tells Git which
+# files/folders to IGNORE (not track).
+#
+# Why ignore files?
+# 1. Security: .env contains passwords!
+# 2. Size: vendor/ can be 100MB+ (install with composer install)
+# 3. Generated: Files that can be recreated
+#
+# ============================================================
+
+# Dependencies (install with: composer install)
+/vendor
+
+# Environment files (contain secrets!)
+.env
+.env.backup
+.env.production
+
+# Laravel generated files
+/bootstrap/cache/*
+!/bootstrap/cache/.gitkeep
+
+# Storage (logs, cache, uploads)
+/storage/*.key
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*
+
+# IDE files
+.idea
+.vscode
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
